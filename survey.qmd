@@ -10,10 +10,15 @@ theme: custom.scss
 #| warning: false
 #| message: false
 
-library(surveydown)
+# library(surveydown)
+devtools::load_all(path = '../surveydown')
 
-shiny::shinyOptions(bootstrapTheme = bslib::bs_theme(version = 5L))
-useShinyjs(rmd = TRUE)
+library(shiny)
+library(shinyjs)
+library(DBI)
+library(RPostgreSQL)
+
+sd_setup()
 ```
 
 ::: {#welcome .sd-page}
@@ -405,14 +410,14 @@ sd_next(next_page = 'end')
 #| context: server
 
 #This is what the user has to input
-db <- sd_database(
-  host = "aws-0-us-west-1.pooler.supabase.com",
-  db_name = "postgres",
-  port = "6543",
-  user = "postgres.kjxxpyqplqvtqqxrxmzi",
-  table_name = "Testing1",
-  password   = Sys.getenv("SUPABASE_PASSWORD")
-)
+# db <- sd_database(
+#   host = "aws-0-us-west-1.pooler.supabase.com",
+#   db_name = "postgres",
+#   port = "6543",
+#   user = "postgres.kjxxpyqplqvtqqxrxmzi",
+#   table_name = "Testing1",
+#   password   = Sys.getenv("SUPABASE_PASSWORD")
+# )
 
 config <- sd_config(
   skip_if = tibble::tribble(
@@ -429,7 +434,7 @@ config <- sd_config(
 sd_server(
   input   = input,
   session = session,
-  config  = config,
-  db      = db
+  config  = config
+  # db      = db
 )
 ```
