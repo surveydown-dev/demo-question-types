@@ -10,7 +10,8 @@ theme: custom.scss
 #| warning: false
 #| message: false
 
-library(surveydown)
+# library(surveydown)
+devtools::load_all("../surveydown")
 sd_setup()
 ```
 
