@@ -35,7 +35,8 @@ sd_question(
     'Chinstrap' = 'chinstrap',
     'Gentoo'    = 'gentoo',
     'Other'     = 'other'
-  )
+  ),
+  required = TRUE
 )
 
 sd_question(
