@@ -126,6 +126,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-penguins-required" value="true">
 </div>
 </div>
 <div class="cell-output-display">
@@ -135,6 +136,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </label>
 <input id="penguins_other" type="text" class="shiny-input-text form-control" value="">
 </div>
+<input type="hidden" id="container-penguins_other-required" value="false">
 </div>
 </div>
 </div>
@@ -152,9 +154,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <p>This page showcases the <code>skip_if</code> feature, which allows you to skip forward in the survey based on different conditions. Depending on your choice, you’ll go to a different page in the survey when you press the “Next” button. This is controlled with the <code>skip_if</code> argument to the <code>sd_config()</code> function defined in the server section at the bottom of the .qmd file.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- skip_to_page" data-question-id="skip_to_page" data-required="false" class="question-container">
+<div id="container- skip_to_page" data-question-id="skip_to_page" data-required="true" class="question-container">
 <div id="skip_to_page" style="width:100%;" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="skip_to_page-label">
-<label class="control-label" id="skip_to_page-label" for="skip_to_page"><p>Where do you want to skip to?</p>
+<label class="control-label" id="skip_to_page-label" for="skip_to_page"><p>Where do you want to skip to? <span style="color: red;">*</span></p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
@@ -177,6 +179,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-skip_to_page-required" value="true">
 </div>
 </div>
 </div>
@@ -214,12 +217,13 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-text-to-specify-a-text-input-type-question">Use <code>type = 'text'</code> to specify a text input type question:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- silly_word" data-question-id="silly_word" data-required="false" class="question-container">
+<div id="container- silly_word" data-question-id="silly_word" data-required="true" class="question-container">
 <div class="form-group shiny-input-container" style="width:100%;">
-<label class="control-label" id="silly_word-label" for="silly_word"><p>Write a silly word:</p>
+<label class="control-label" id="silly_word-label" for="silly_word"><p>Write a silly word: <span style="color: red;">*</span></p>
 </label>
 <input id="silly_word" type="text" class="shiny-input-text form-control" value="">
 </div>
+<input type="hidden" id="container-silly_word-required" value="true">
 </div>
 </div>
 </div>
@@ -234,6 +238,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </label>
 <textarea id="silly_paragraph" class="shiny-input-textarea form-control" style="width:100%;height:100px;" rows="6" cols="80"></textarea>
 </div>
+<input type="hidden" id="container-silly_paragraph-required" value="false">
 </div>
 </div>
 </div>
@@ -248,6 +253,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </label>
 <input id="age" type="number" class="shiny-input-number form-control">
 </div>
+<input type="hidden" id="container-age-required" value="false">
 </div>
 </div>
 </div>
@@ -305,6 +311,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-artist-required" value="false">
 </div>
 </div>
 </div>
@@ -337,6 +344,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-fruit-required" value="false">
 </div>
 </div>
 </div>
@@ -412,6 +420,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-swift-required" value="false">
 </div>
 </div>
 </div>
@@ -446,6 +455,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-michael_jackson-required" value="false">
 </div>
 </div>
 </div>
@@ -470,6 +480,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <script type="application/json" data-for="education">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
 </div>
+<input type="hidden" id="container-education-required" value="false">
 </div>
 </div>
 </div>
@@ -484,6 +495,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </label>
 <input class="js-range-slider sw-slider-text" data-data-type="text" data-force-edges="true" data-from="0" data-from-fixed="false" data-from-shadow="false" data-grid="true" data-hide-min-max="false" data-keyboard="true" data-prettify-enabled="false" data-skin="shiny" data-swvalues="[&quot;dont_believe&quot;,&quot;somewhat&quot;,&quot;neutral&quot;,&quot;believe&quot;,&quot;strongly_believe&quot;]" data-to-fixed="false" data-to-shadow="false" id="climate_care">
 </div>
+<input type="hidden" id="container-climate_care-required" value="false">
 </div>
 </div>
 </div>
@@ -498,6 +510,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </label>
 <input class="js-range-slider sw-slider-text" data-data-type="text" data-drag-interval="true" data-force-edges="true" data-from="3" data-from-fixed="false" data-from-shadow="false" data-grid="true" data-hide-min-max="false" data-keyboard="true" data-prettify-enabled="false" data-skin="shiny" data-swvalues="[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;,&quot;Sep&quot;,&quot;Oct&quot;,&quot;Nov&quot;,&quot;Dec&quot;]" data-to="7" data-to-fixed="false" data-to-shadow="false" data-type="double" id="coldest_months">
 </div>
+<input type="hidden" id="container-coldest_months-required" value="false">
 </div>
 </div>
 </div>
@@ -512,6 +525,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </label>
 <input type="text" class="form-control" aria-labelledby="dob-label" title="Date format: mm/dd/yyyy" data-date-language="en" data-date-week-start="0" data-date-format="mm/dd/yyyy" data-date-start-view="month" data-date-autoclose="true" data-date-dates-disabled="null" data-date-days-of-week-disabled="null">
 </div>
+<input type="hidden" id="container-dob-required" value="false">
 </div>
 </div>
 </div>
@@ -532,6 +546,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <input class="form-control" type="text" aria-labelledby="hs_date-label" title="Date format: mm/dd/yyyy" data-date-language="en" data-date-week-start="0" data-date-format="mm/dd/yyyy" data-date-start-view="month" data-date-autoclose="true">
 </div>
 </div>
+<input type="hidden" id="container-hs_date-required" value="false">
 </div>
 </div>
 </div>
@@ -580,6 +595,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-markdown_label-required" value="false">
 </div>
 </div>
 </div>
@@ -605,6 +621,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-markdown_buttons-required" value="false">
 </div>
 </div>
 </div>
@@ -627,6 +644,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-markdown_multiple_buttons-required" value="false">
 </div>
 </div>
 </div>
@@ -651,6 +669,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
+<input type="hidden" id="container-html_buttons-required" value="false">
 </div>
 </div>
 </div>
@@ -665,6 +684,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </label>
 <textarea id="change_width" class="shiny-input-textarea form-control" style="width:100%;height:100px;" rows="6" cols="80"></textarea>
 </div>
+<input type="hidden" id="container-change_width-required" value="false">
 </div>
 </div>
 </div>

@@ -69,7 +69,8 @@ sd_question(
     'Take me to the page on Question Types (the next page)' = 'question_types',
     'Take me to the page on Question Formatting' = 'question_formatting',
     'Skip to the end' = 'end'
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -109,7 +110,8 @@ This page showcases the different types of question supported by `{surveydown}`.
 sd_question(
   type  = "text",
   id    = "silly_word",
-  label = "Write a silly word:"
+  label = "Write a silly word:",
+  required = TRUE
 )
 ```
 
