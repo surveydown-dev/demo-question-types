@@ -10,7 +10,8 @@ theme: custom.scss
 #| warning: false
 #| message: false
 
-library(surveydown)
+# library(surveydown)
+devtools::load_all("../surveydown")
 sd_setup()
 ```
 
@@ -34,7 +35,8 @@ sd_question(
     'Chinstrap' = 'chinstrap',
     'Gentoo'    = 'gentoo',
     'Other'     = 'other'
-  )
+  ),
+  required = TRUE
 )
 
 sd_question(
@@ -67,7 +69,8 @@ sd_question(
     'Take me to the page on Question Types (the next page)' = 'question_types',
     'Take me to the page on Question Formatting' = 'question_formatting',
     'Skip to the end' = 'end'
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -107,7 +110,8 @@ This page showcases the different types of question supported by `{surveydown}`.
 sd_question(
   type  = "text",
   id    = "silly_word",
-  label = "Write a silly word:"
+  label = "Write a silly word:",
+  required = TRUE
 )
 ```
 
@@ -117,7 +121,8 @@ sd_question(
 sd_question(
   type  = "textarea",
   id    = "silly_paragraph",
-  label = "Write a silly paragraph:"
+  label = "Write a silly paragraph:",
+  required = TRUE
 )
 ```
 
@@ -127,7 +132,8 @@ sd_question(
 sd_question(
   type  = 'numeric',
   id    = 'age',
-  label = "What's your age?"
+  label = "What's your age?",
+  required = TRUE
 )
 ```
 
@@ -146,7 +152,8 @@ sd_question(
     "Lady Gaga"    = "ladygaga",
     "Ed Sheeran"   = "ed_sheeran",
     "Drake"        = "drake"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -165,7 +172,8 @@ sd_question(
     "Grape"      = "grape",
     "Mango"      = "mango",
     "Watermelon" = "watermelon"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -187,7 +195,8 @@ sd_question(
     "Folklore (2020)"     = "folklore",
     "Evermore (2020)"     = "evermore",
     "Midnights (2022)"    = "midnights"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -207,7 +216,8 @@ sd_question(
     "Black or White (1991)"    = "black_or_white",
     "Bad (1987)"               = "bad",
     "Human Nature (1982)"      = "human_nature"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -226,7 +236,8 @@ sd_question(
     "College"                    = "college_grad",
     "Graduate Work"              = "grad",
     "Prefer not to say"          = "no_response"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -243,7 +254,8 @@ sd_question(
     "Neutral"          = "neutral",
     "Believe"          = "believe",
     "Strongly Believe" = "strongly_believe"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -255,7 +267,8 @@ sd_question(
   id       = 'coldest_months',
   label    = "What months do you think are the coldest throughout a year?",
   option   = month.abb,
-  selected = month.abb[c(4, 8)]
+  selected = month.abb[c(4, 8)],
+  required = TRUE
 )
 ```
 
@@ -265,7 +278,8 @@ sd_question(
 sd_question(
   type  = 'date',
   id    = 'dob',
-  label = "What is your date of birth?"
+  label = "What is your date of birth?",
+  required = TRUE
 )
 ```
 
@@ -275,7 +289,8 @@ sd_question(
 sd_question(
   type  = 'daterange',
   id    = 'hs_date',
-  label = "When did you start and finish high school?"
+  label = "When did you start and finish high school?",
+  required = TRUE
 )
 ```
 
@@ -306,7 +321,8 @@ sd_question(
     "Option A" = "option_a",
     "Option B" = "option_b",
     "Option C" = "option_c"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -323,7 +339,8 @@ sd_question(
     "*Option A*"     = "option_a",
     "**Option B**"   = "option_b",
     "***Option C***" = "option_c"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -338,7 +355,8 @@ sd_question(
     "*Option A*"     = "option_a",
     "**Option B**"   = "option_b",
     "***Option C***" = "option_c"
-  )
+  ),
+  required = TRUE
 )
 ```
 
@@ -370,7 +388,8 @@ sd_question(
   type   = 'mc_buttons',
   id     = 'html_buttons',
   label  = "A sample survey question using `mc_buttons`",
-  option = html_buttons_option
+  option = html_buttons_option,
+  required = TRUE
 )
 ```
 
@@ -381,7 +400,8 @@ sd_question(
   type  = "textarea",
   id    = "change_width",
   label = "This text area has width set as 40%:",
-  width = "40%"
+  width = "40%",
+  required = TRUE
 )
 ```
 
