@@ -97,7 +97,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <div class="cell-output-display">
 <div id="container- penguins" data-question-id="penguins" data-required="true" class="question-container">
 <div id="penguins" style="width:100%;" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="penguins-label">
-<label class="control-label" id="penguins-label" for="penguins"><p>Which is your favorite type of penguin? <span style="color: red;">*</span></p>
+<label class="control-label" id="penguins-label" for="penguins"><p>Which is your favorite type of penguin? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
@@ -126,7 +126,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-penguins-required" value="true">
 </div>
 </div>
 <div class="cell-output-display">
@@ -136,7 +135,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </label>
 <input id="penguins_other" type="text" class="shiny-input-text form-control" value="">
 </div>
-<input type="hidden" id="container-penguins_other-required" value="false">
 </div>
 </div>
 </div>
@@ -156,7 +154,7 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <div class="cell-output-display">
 <div id="container- skip_to_page" data-question-id="skip_to_page" data-required="true" class="question-container">
 <div id="skip_to_page" style="width:100%;" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="skip_to_page-label">
-<label class="control-label" id="skip_to_page-label" for="skip_to_page"><p>Where do you want to skip to? <span style="color: red;">*</span></p>
+<label class="control-label" id="skip_to_page-label" for="skip_to_page"><p>Where do you want to skip to? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
@@ -179,7 +177,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-skip_to_page-required" value="true">
 </div>
 </div>
 </div>
@@ -219,11 +216,10 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <div class="cell-output-display">
 <div id="container- silly_word" data-question-id="silly_word" data-required="true" class="question-container">
 <div class="form-group shiny-input-container" style="width:100%;">
-<label class="control-label" id="silly_word-label" for="silly_word"><p>Write a silly word: <span style="color: red;">*</span></p>
+<label class="control-label" id="silly_word-label" for="silly_word"><p>Write a silly word: <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <input id="silly_word" type="text" class="shiny-input-text form-control" value="">
 </div>
-<input type="hidden" id="container-silly_word-required" value="true">
 </div>
 </div>
 </div>
@@ -232,13 +228,12 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-textarea-to-specify-a-textarea-input-type-question">Use <code>type = 'textarea'</code> to specify a textarea input type question:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- silly_paragraph" data-question-id="silly_paragraph" data-required="false" class="question-container">
+<div id="container- silly_paragraph" data-question-id="silly_paragraph" data-required="true" class="question-container">
 <div class="form-group shiny-input-container" style="width: 100%;">
-<label class="control-label" id="silly_paragraph-label" for="silly_paragraph"><p>Write a silly paragraph:</p>
+<label class="control-label" id="silly_paragraph-label" for="silly_paragraph"><p>Write a silly paragraph: <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <textarea id="silly_paragraph" class="shiny-input-textarea form-control" style="width:100%;height:100px;" rows="6" cols="80"></textarea>
 </div>
-<input type="hidden" id="container-silly_paragraph-required" value="false">
 </div>
 </div>
 </div>
@@ -247,13 +242,12 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-numeric-to-specify-a-numeric-input-type">Use <code>type = 'numeric'</code> to specify a numeric input type:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- age" data-question-id="age" data-required="false" class="question-container">
+<div id="container- age" data-question-id="age" data-required="true" class="question-container">
 <div class="form-group shiny-input-container" style="width:100%;">
-<label class="control-label" id="age-label" for="age"><p>What’s your age?</p>
+<label class="control-label" id="age-label" for="age"><p>What’s your age? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <input id="age" type="number" class="shiny-input-number form-control">
 </div>
-<input type="hidden" id="container-age-required" value="false">
 </div>
 </div>
 </div>
@@ -262,9 +256,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-mc-to-specify-a-multiple-choice-type-question-with-a-single-choice-option">Use <code>type = 'mc'</code> to specify a multiple choice type question with a single choice option:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- artist" data-question-id="artist" data-required="false" class="question-container">
+<div id="container- artist" data-question-id="artist" data-required="true" class="question-container">
 <div id="artist" style="width:100%;" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="artist-label">
-<label class="control-label" id="artist-label" for="artist"><p>Which artist do you prefer most from this list?</p>
+<label class="control-label" id="artist-label" for="artist"><p>Which artist do you prefer most from this list? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
@@ -311,7 +305,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-artist-required" value="false">
 </div>
 </div>
 </div>
@@ -320,9 +313,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-mc_buttons-to-generate-the-button-version-of-mc">Use <code>type = 'mc_buttons'</code> to generate the button version of <code>mc</code>:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- fruit" data-question-id="fruit" data-required="false" class="question-container">
+<div id="container- fruit" data-question-id="fruit" data-required="true" class="question-container">
 <div class="form-group shiny-input-container shiny-input-radiogroup shiny-input-container-inline" style="width:100%;">
-<label class="control-label" id="fruit-label" for="fruit"><p>Which fruit do you prefer most from this list?</p>
+<label class="control-label" id="fruit-label" for="fruit"><p>Which fruit do you prefer most from this list? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <br>
 <div id="fruit" class="radio-group-buttons">
@@ -344,7 +337,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-fruit-required" value="false">
 </div>
 </div>
 </div>
@@ -353,9 +345,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-mc_multiple-to-specify-a-multiple-choice-type-question-with-multiple-selection-enabled">Use <code>type = 'mc_multiple'</code> to specify a multiple choice type question with multiple selection enabled:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- swift" data-question-id="swift" data-required="false" class="question-container">
+<div id="container- swift" data-question-id="swift" data-required="true" class="question-container">
 <div id="swift" style="width:100%;" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="swift-label">
-<label class="control-label" id="swift-label" for="swift"><p>What are your favorite Taylor Swift albums (select all that apply)?</p>
+<label class="control-label" id="swift-label" for="swift"><p>What are your favorite Taylor Swift albums (select all that apply)? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <div class="shiny-options-group">
 <div class="checkbox">
@@ -420,7 +412,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-swift-required" value="false">
 </div>
 </div>
 </div>
@@ -429,9 +420,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-mc_multiple_buttons-to-generate-the-button-version-of-mc_multiple">Use <code>type = 'mc_multiple_buttons'</code> to generate the button version of <code>mc_multiple</code>:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- michael_jackson" data-question-id="michael_jackson" data-required="false" class="question-container">
+<div id="container- michael_jackson" data-question-id="michael_jackson" data-required="true" class="question-container">
 <div class="form-group shiny-input-container shiny-input-checkboxgroup shiny-input-container-inline" style="width:100%;">
-<label class="control-label" id="michael_jackson-label" for="michael_jackson"><p>Which are your favorite Michael Jackson songs (select all that apply)?</p>
+<label class="control-label" id="michael_jackson-label" for="michael_jackson"><p>Which are your favorite Michael Jackson songs (select all that apply)? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <br>
 <div id="michael_jackson" class="checkbox-group-buttons">
@@ -455,7 +446,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-michael_jackson-required" value="false">
 </div>
 </div>
 </div>
@@ -464,9 +454,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-select-to-specify-a-drop-down-select-type-question">Use <code>type = 'select'</code> to specify a drop down select type question:</h4>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<div id="container- education" data-question-id="education" data-required="false" class="question-container">
+<div id="container- education" data-question-id="education" data-required="true" class="question-container">
 <div class="form-group shiny-input-container" style="width:100%;">
-<label class="control-label" id="education-label" for="education"><p>What is the highest level of education you have attained?</p>
+<label class="control-label" id="education-label" for="education"><p>What is the highest level of education you have attained? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <div>
 <select id="education" class="shiny-input-select"><option value="">Choose an option...</option>
@@ -480,7 +470,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <script type="application/json" data-for="education">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
 </div>
-<input type="hidden" id="container-education-required" value="false">
 </div>
 </div>
 </div>
@@ -489,13 +478,12 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-slider-to-specify-a-slider-input-type">Use <code>type = 'slider'</code> to specify a slider input type:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- climate_care" data-question-id="climate_care" data-required="false" class="question-container">
+<div id="container- climate_care" data-question-id="climate_care" data-required="true" class="question-container">
 <div class="form-group shiny-input-container" style="width:100%;">
-<label class="control-label" id="climate_care-label" for="climate_care"><p>To what extent do you believe human-caused climate change is real?</p>
+<label class="control-label" id="climate_care-label" for="climate_care"><p>To what extent do you believe human-caused climate change is real? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <input class="js-range-slider sw-slider-text" data-data-type="text" data-force-edges="true" data-from="0" data-from-fixed="false" data-from-shadow="false" data-grid="true" data-hide-min-max="false" data-keyboard="true" data-prettify-enabled="false" data-skin="shiny" data-swvalues="[&quot;dont_believe&quot;,&quot;somewhat&quot;,&quot;neutral&quot;,&quot;believe&quot;,&quot;strongly_believe&quot;]" data-to-fixed="false" data-to-shadow="false" id="climate_care">
 </div>
-<input type="hidden" id="container-climate_care-required" value="false">
 </div>
 </div>
 </div>
@@ -504,13 +492,12 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="type-slider-can-also-be-used-to-select-a-range"><code>type = 'slider'</code> can also be used to select a range:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- coldest_months" data-question-id="coldest_months" data-required="false" class="question-container">
+<div id="container- coldest_months" data-question-id="coldest_months" data-required="true" class="question-container">
 <div class="form-group shiny-input-container" style="width:100%;">
-<label class="control-label" id="coldest_months-label" for="coldest_months"><p>What months do you think are the coldest throughout a year?</p>
+<label class="control-label" id="coldest_months-label" for="coldest_months"><p>What months do you think are the coldest throughout a year? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <input class="js-range-slider sw-slider-text" data-data-type="text" data-drag-interval="true" data-force-edges="true" data-from="3" data-from-fixed="false" data-from-shadow="false" data-grid="true" data-hide-min-max="false" data-keyboard="true" data-prettify-enabled="false" data-skin="shiny" data-swvalues="[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;,&quot;Sep&quot;,&quot;Oct&quot;,&quot;Nov&quot;,&quot;Dec&quot;]" data-to="7" data-to-fixed="false" data-to-shadow="false" data-type="double" id="coldest_months">
 </div>
-<input type="hidden" id="container-coldest_months-required" value="false">
 </div>
 </div>
 </div>
@@ -519,13 +506,12 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-date-to-specify-a-date-input-type">Use <code>type = 'date'</code> to specify a date input type:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- dob" data-question-id="dob" data-required="false" class="question-container">
+<div id="container- dob" data-question-id="dob" data-required="true" class="question-container">
 <div id="dob" class="shiny-date-input form-group shiny-input-container" style="width:100%;">
-<label class="control-label" id="dob-label" for="dob"><p>What is your date of birth?</p>
+<label class="control-label" id="dob-label" for="dob"><p>What is your date of birth? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <input type="text" class="form-control" aria-labelledby="dob-label" title="Date format: mm/dd/yyyy" data-date-language="en" data-date-week-start="0" data-date-format="mm/dd/yyyy" data-date-start-view="month" data-date-autoclose="true" data-date-dates-disabled="null" data-date-days-of-week-disabled="null">
 </div>
-<input type="hidden" id="container-dob-required" value="false">
 </div>
 </div>
 </div>
@@ -534,9 +520,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-type-daterange-to-specify-a-daterange-input-type">Use <code>type = 'daterange'</code> to specify a daterange input type:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- hs_date" data-question-id="hs_date" data-required="false" class="question-container">
+<div id="container- hs_date" data-question-id="hs_date" data-required="true" class="question-container">
 <div id="hs_date" class="shiny-date-range-input form-group shiny-input-container" style="width:100%;">
-<label class="control-label" id="hs_date-label" for="hs_date"><p>When did you start and finish high school?</p>
+<label class="control-label" id="hs_date-label" for="hs_date"><p>When did you start and finish high school? <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <div class="input-daterange input-group input-group-sm">
 <input class="form-control" type="text" aria-labelledby="hs_date-label" title="Date format: mm/dd/yyyy" data-date-language="en" data-date-week-start="0" data-date-format="mm/dd/yyyy" data-date-start-view="month" data-date-autoclose="true">
@@ -546,7 +532,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <input class="form-control" type="text" aria-labelledby="hs_date-label" title="Date format: mm/dd/yyyy" data-date-language="en" data-date-week-start="0" data-date-format="mm/dd/yyyy" data-date-start-view="month" data-date-autoclose="true">
 </div>
 </div>
-<input type="hidden" id="container-hs_date-required" value="false">
 </div>
 </div>
 </div>
@@ -570,9 +555,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <p>The <code>label</code> argument for any question type can accept markdown formatting. For example, the question below uses the <code>**</code> symbols to make some works bold:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- markdown_label" data-question-id="markdown_label" data-required="false" class="question-container">
+<div id="container- markdown_label" data-question-id="markdown_label" data-required="true" class="question-container">
 <div id="markdown_label" style="width:100%;" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="markdown_label-label">
-<label class="control-label" id="markdown_label-label" for="markdown_label"><p><strong>This</strong> is a question <em>label</em> supporting <em><strong>markdown</strong></em>:</p>
+<label class="control-label" id="markdown_label-label" for="markdown_label"><p><strong>This</strong> is a question <em>label</em> supporting <em><strong>markdown</strong></em>: <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
@@ -595,7 +580,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-markdown_label-required" value="false">
 </div>
 </div>
 </div>
@@ -605,9 +589,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <p>For <code>mc_button</code> type questions, you can also use markdown to format the <code>option</code> labels:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- markdown_buttons" data-question-id="markdown_buttons" data-required="false" class="question-container">
+<div id="container- markdown_buttons" data-question-id="markdown_buttons" data-required="true" class="question-container">
 <div class="form-group shiny-input-container shiny-input-radiogroup shiny-input-container-inline" style="width:100%;">
-<label class="control-label" id="markdown_buttons-label" for="markdown_buttons"><p>The 3 options below support markdown:</p>
+<label class="control-label" id="markdown_buttons-label" for="markdown_buttons"><p>The 3 options below support markdown: <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <br>
 <div id="markdown_buttons" class="radio-group-buttons">
@@ -621,16 +605,15 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-markdown_buttons-required" value="false">
 </div>
 </div>
 </div>
 <p>The same is true for <code>mc_multiple_buttons</code>:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- markdown_multiple_buttons" data-question-id="markdown_multiple_buttons" data-required="false" class="question-container">
+<div id="container- markdown_multiple_buttons" data-question-id="markdown_multiple_buttons" data-required="true" class="question-container">
 <div class="form-group shiny-input-container shiny-input-checkboxgroup shiny-input-container-inline" style="width:100%;">
-<label class="control-label" id="markdown_multiple_buttons-label" for="markdown_multiple_buttons"><p>The 3 options below support markdown:</p>
+<label class="control-label" id="markdown_multiple_buttons-label" for="markdown_multiple_buttons"><p>The 3 options below support markdown: <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <br>
 <div id="markdown_multiple_buttons" class="checkbox-group-buttons">
@@ -644,7 +627,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-markdown_multiple_buttons-required" value="false">
 </div>
 </div>
 </div>
@@ -653,9 +635,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="html-is-also-supported-for-options-of-mc_buttons-and-mc_multiple_buttons-so-that-you-can-insert-mixed-content-including-plain-text-markdown-and-html-images.-for-example-here-is-a-question-with-some-complex-labels-for-a-choice-question">HTML is also supported for options of <code>mc_buttons</code> and <code>mc_multiple_buttons</code>, so that you can insert mixed content including plain text, markdown, and HTML images. For example, here is a question with some complex labels for a choice question:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- html_buttons" data-question-id="html_buttons" data-required="false" class="question-container">
+<div id="container- html_buttons" data-question-id="html_buttons" data-required="true" class="question-container">
 <div class="form-group shiny-input-container shiny-input-radiogroup shiny-input-container-inline" style="width:100%;">
-<label class="control-label" id="html_buttons-label" for="html_buttons"><p>A sample survey question using <code>mc_buttons</code></p>
+<label class="control-label" id="html_buttons-label" for="html_buttons"><p>A sample survey question using <code>mc_buttons</code> <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <br>
 <div id="html_buttons" class="radio-group-buttons">
@@ -669,7 +651,6 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 </div>
 </div>
-<input type="hidden" id="container-html_buttons-required" value="false">
 </div>
 </div>
 </div>
@@ -678,13 +659,12 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 <h4 class="anchored" data-anchor-id="use-the-width-argument-to-change-the-width-for-the-question">Use the <code>width</code> argument to change the width for the question:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container- change_width" data-question-id="change_width" data-required="false" class="question-container">
+<div id="container- change_width" data-question-id="change_width" data-required="true" class="question-container">
 <div class="form-group shiny-input-container" style="width: 40%;">
-<label class="control-label" id="change_width-label" for="change_width"><p>This text area has width set as 40%:</p>
+<label class="control-label" id="change_width-label" for="change_width"><p>This text area has width set as 40%: <span style="color: red; font-size: 1.5em; vertical-align: middle; position: relative; top: 0.1em;">*</span></p>
 </label>
 <textarea id="change_width" class="shiny-input-textarea form-control" style="width:100%;height:100px;" rows="6" cols="80"></textarea>
 </div>
-<input type="hidden" id="container-change_width-required" value="false">
 </div>
 </div>
 </div>
