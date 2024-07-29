@@ -684,8 +684,9 @@ Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debu
 </div>
 <p>
 <script type="application/shiny-prerendered" data-context="server-start">
-library(surveydown)
 # devtools::load_all("../surveydown")
+# remotes::install_github("jhelvy/surveydown")
+library(surveydown)
 sd_setup()
 </script>
  

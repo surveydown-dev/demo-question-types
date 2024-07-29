@@ -11,6 +11,7 @@ theme: custom.scss
 #| message: false
 
 # devtools::load_all("../surveydown")
+# remotes::install_github("jhelvy/surveydown")
 library(surveydown)
 sd_setup()
 ```
