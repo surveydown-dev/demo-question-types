@@ -10,9 +10,9 @@ theme: custom.scss
 #| warning: false
 #| message: false
 
-# devtools::load_all("../surveydown")
-# remotes::install_github("jhelvy/surveydown")
-library(surveydown)
+devtools::load_all("../surveydown")
+# remotes::install_github("jhelvy/surveydown", force = TRUE)
+# library(surveydown)
 sd_setup()
 ```
 
@@ -43,7 +43,8 @@ sd_question(
 sd_question(
   type  = "text",
   id    = "penguins_other",
-  label = "Please specify the other penguin type:"
+  label = "Please specify the other penguin type:",
+  required = TRUE
 )
 ```
 
