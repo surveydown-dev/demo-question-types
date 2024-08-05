@@ -1,7 +1,6 @@
 ---
 server: shiny
 filters: [surveydown]
-theme: custom.scss
 ---
 
 ```{r}
@@ -19,7 +18,7 @@ sd_setup()
 ::: {#welcome .sd-page}
 
 # Welcome to my survey!
-
+ 
 Here is a question to get started.
 
 This question showcases what a "multiple choice" question looks like, which is created using `type = 'mc'` inside the `sd_question()` function.
