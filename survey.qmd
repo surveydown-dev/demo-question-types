@@ -15,17 +15,10 @@ filters: [surveydown]
 # Run this in your Console to install the R package:
 # remotes::install_github("jhelvy/surveydown", force = TRUE)
 
-# Load the package locally:
-# devtools::load_all("../surveydown")
-
 # Load the package from library:
 library(surveydown)
 
-# Load other necessary packages:
-library(tidyverse)
-library(glue)
-
-# This is essential to the survey:
+# Run initial setup function (essential - do not delete)
 sd_setup()
 ```
 
