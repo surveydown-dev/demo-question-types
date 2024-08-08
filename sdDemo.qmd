@@ -127,7 +127,7 @@ This page showcases the different types of question supported by `{surveydown}`.
 ```{r}
 sd_question(
   type  = "text",
-  id    = "silly_word2",
+  id    = "silly_word",
   label = "Write a silly word:",
   required = TRUE
 )
