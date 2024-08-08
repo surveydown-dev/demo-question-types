@@ -127,7 +127,7 @@ This page showcases the different types of question supported by `{surveydown}`.
 ```{r}
 sd_question(
   type  = "text",
-  id    = "silly_word",
+  id    = "silly_word2",
   label = "Write a silly word:",
   required = TRUE
 )
@@ -453,7 +453,7 @@ db <- sd_database(
   user       = "postgres.hwumdvjnymbrgeemvrhq",
   table_name = "demo",
   password   = Sys.getenv("SUPABASE_PASSWORD"),
-  gssencmode = "disable" # Set to "disable" if there is connection error
+  gssencmode = "disable"
 )
 
 config <- sd_config(
@@ -465,15 +465,13 @@ config <- sd_config(
   show_if = tibble::tribble(
     ~question_id,  ~question_value, ~target,
     "penguins",    "other",         "penguins_other"
-  ),
-  preview = TRUE,
-  show_all_pages = FALSE
+  )
 )
 
 sd_server(
   input   = input,
   session = session,
-  config  = config
-  # db      = db
+  config  = config,
+  db      = db
 )
 ```
