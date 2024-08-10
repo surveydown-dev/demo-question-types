@@ -7,3 +7,5 @@ docs
 doc
 Meta
 .idea
+.Renviron
+deploy.R
