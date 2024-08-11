@@ -440,11 +440,9 @@ sd_next(next_page = 'end')
 ```{r}
 #| context: server
 
-# To set the password, run usethis::edit_r_environ()
-# Then, type SUPABASE_PASSWORD=your_password
-# No quotation needed
-# Finally, restart R session by Session -> Restart R
-# Shortcut for restarting R: cmd+shift+0 (Mac), ctrl+shift+F10 (Win)
+# To set your supabase password in this project,
+# run sd_set_password("your_password") in the R Console.
+# You only need to set the password once for each survey project.
 
 db <- sd_database(
   host       = "aws-0-us-east-1.pooler.supabase.com",
@@ -458,8 +456,8 @@ db <- sd_database(
 
 config <- sd_config(
   skip_if = tibble::tribble(
-    ~question_id,  ~question_value, ~target,
-    "skip_to_page", "end",           "end",
+    ~question_id,   ~question_value,        ~target,
+    "skip_to_page", "end",                  "end",
     "skip_to_page", "question_formatting",  "questionFormatting"
   ),
   show_if = tibble::tribble(
