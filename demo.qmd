@@ -18,10 +18,8 @@ filters: [surveydown]
 # Or, run this to install t he Quarto extension:
 # surveydown::sd_update_extension()
 
-# Load the package from library:
+# Load the package:
 library(surveydown)
-
-# Or, load the package locally:
 # devtools::load_all("../surveydown")
 
 # Load other necessary packages:
@@ -450,7 +448,6 @@ db <- sd_database(
   port       = "6543",
   user       = "postgres.hwumdvjnymbrgeemvrhq",
   table_name = "demo",
-  password   = Sys.getenv("SUPABASE_PASSWORD"),
   gssencmode = "disable"
 )
 
