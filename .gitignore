@@ -9,3 +9,8 @@ Meta
 .idea
 deploy.R
 .Renviron
+demo_files
+demo.html
+_extensions
+rsconnect
+data.csv
