@@ -16,6 +16,7 @@ filters: [surveydown]
 # surveydown::sd_update_extension()
 
 # Load the package
+# devtools::load_all("../surveydown")
 library(surveydown)
 
 # Run initial setup function (essential - do not delete)
@@ -419,8 +420,9 @@ db <- sd_database(
   db_name    = "postgres",
   port       = "6543",
   user       = "postgres.hwumdvjnymbrgeemvrhq",
-  table_name = "demo",
-  pause      = TRUE # Pauses the database connection
+  table_name = "demo"
+  # gssencmode = "disable" # Use this if supabase connection fails
+  # pause      = TRUE # Pauses the database connection
 )
 
 config <- sd_config(
@@ -433,8 +435,8 @@ config <- sd_config(
     ~question_id,  ~question_value, ~target,
     "penguins",    "other",         "penguins_other"
   ), 
-  required_questions = c("penguins", "penguins_other", "skip_to_page")
-  # all_questions_required = TRUE # Turn on to make all questions required
+  # required_questions = c("penguins", "penguins_other", "skip_to_page")
+  all_questions_required = TRUE # Turn on to make all questions required
   
 )
 
