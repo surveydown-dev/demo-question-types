@@ -420,8 +420,8 @@ db <- sd_database(
   db_name    = "postgres",
   port       = "6543",
   user       = "postgres.hwumdvjnymbrgeemvrhq",
-  table_name = "demo"
-  # gssencmode = "disable" # Use this if supabase connection fails
+  table_name = "demo",
+  gssencmode = "disable" # Use this if supabase connection fails
   # pause      = TRUE # Pauses the database connection
 )
 
