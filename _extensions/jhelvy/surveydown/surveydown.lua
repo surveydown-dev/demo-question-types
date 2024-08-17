@@ -1,7 +1,7 @@
 local function ensure_html_deps()
   quarto.doc.add_html_dependency({
-    name = 'hidepagesjs',
-    scripts = {"hide_pages.js"}
+    name = 'requiredquestions',
+    scripts = {"required_questions.js"}
   })
   quarto.doc.add_html_dependency({
     name = 'updateprogressjs',
