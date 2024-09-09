@@ -53,8 +53,12 @@ db <- sd_database(
 
 ::: {#welcome .sd-page}
 
-# Welcome to my survey!
- 
+# Demo survey of question types
+
+> This is a demo survey showcasing the functionality of <a href="https://surveydown.org" target="_blank">surveydown</a>. It doesn't collect any data.
+>
+> The GitHub repo of this demo can be accessed <a href="https://github.com/surveydown-dev/demo-question-types" target="_blank">here</a>.
+
 Here is a question to get started.
 
 This question showcases what a "multiple choice" question looks like, which is created using `type = 'mc'` inside the `sd_question()` function.
