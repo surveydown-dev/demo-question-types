@@ -23,7 +23,6 @@ filters: [surveydown]
 # Load packages #
 #################
 
-# Load the package
 library(surveydown)
 
 # Run initial setup function (essential - do not delete)
@@ -55,9 +54,12 @@ db <- sd_database(
 
 # Demo survey of question types
 
-> This is a demo survey showcasing the functionality of <a href="https://surveydown.org" target="_blank">surveydown</a>. It doesn't collect any data.
->
-> The GitHub repo of this demo can be accessed <a href="https://github.com/surveydown-dev/demo-question-types" target="_blank">here</a>.
+::: {.callout-note}
+This is a demo survey showcasing the functionality of <a href="https://surveydown.org" target="_blank">surveydown</a>. It doesn't collect any data.
+
+The GitHub repo of this demo can be accessed <a href="https://github.com/surveydown-dev/demo-question-types" target="_blank">here</a>.
+
+:::
 
 Here is a question to get started.
 
@@ -83,11 +85,7 @@ sd_question(
   id    = "penguins_other",
   label = "Please specify the other penguin type:"
 )
-```
 
-<br>
-
-```{r}
 sd_next(next_page = 'skipif')
 ```
 
@@ -110,11 +108,7 @@ sd_question(
     'Skip to the end' = 'end'
   )
 )
-```
 
-<br>
-
-```{r}
 sd_next(next_page = 'questionTypes')
 ```
 
@@ -318,11 +312,7 @@ sd_question(
   id    = 'hs_date',
   label = "When did you start and finish high school?"
 )
-```
 
-<br>
-
-```{r}
 sd_next(next_page = 'questionFormatting')
 ```
 
@@ -424,11 +414,7 @@ sd_question(
   label = "This text area has width set as 40%:",
   width = "40%"
 )
-```
 
-<br>
-
-```{r}
 sd_next(next_page = 'end')
 ```
 
