@@ -4,8 +4,7 @@ warning: false
 ---
 
 ```{r}
-# library(surveydown)
-devtools::load_all("../surveydown")
+library(surveydown)
 ```
 
 ::: {#welcome .sd-page}
@@ -381,5 +380,9 @@ sd_next(next_page = 'end')
 ::: {#end .sd-page}
 
 ## Thanks for taking our survey!
+
+```{r}
+sd_close()
+```
 
 :::

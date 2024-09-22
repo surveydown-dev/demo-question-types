@@ -1,6 +1,5 @@
 # remotes::install_github("surveydown-dev/surveydown", force = TRUE)
-# library(surveydown)
-devtools::load_all("../surveydown")
+library(surveydown)
 
 # Database setup
 
