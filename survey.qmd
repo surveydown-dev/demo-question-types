@@ -1,53 +1,11 @@
 ---
-server: shiny
-filters: [surveydown]
+echo: false
+warning: false
 ---
 
 ```{r}
-#| context: setup
-#| echo: false
-#| warning: false
-#| message: false
-
-################
-# Installation #
-################
-
-# Run this in your R Console to install the latest version of the package:
-# remotes::install_github("surveydown-dev/surveydown", force = TRUE)
-
-# Run this to install or update the Quarto extension to the latest version:
-# surveydown::sd_update_extension()
-
-#################
-# Load packages #
-#################
-
-library(surveydown)
-
-# Run initial setup function (essential - do not delete)
-sd_setup()
-
-##################
-# Database setup #
-##################
-
-# surveydown stores data on a database that you define at https://supabase.com/
-# To connect to a database, update the sd_database() function with details
-# from your supabase database. For this demo, we set ignore = TRUE, which will
-# ignore the settings and won't attempt to connect to the database. This is
-# helpful for local testing if you don't want to record testing data in the
-# database table. See the documentation for details:
-# https://surveydown.org/store-data
-
-db <- sd_database(
-  host   = "",
-  dbname = "",
-  port   = "",
-  user   = "",
-  table  = "",
-  ignore = TRUE
-)
+# library(surveydown)
+devtools::load_all("../surveydown")
 ```
 
 ::: {#welcome .sd-page}
@@ -425,44 +383,3 @@ sd_next(next_page = 'end')
 ## Thanks for taking our survey!
 
 :::
-
-```{r}
-#| context: server
-
-################
-# config setup #
-################
-
-# Use the sd_config() function to customize features in your survey, like
-# logic to conditionally display questions or skip to pages based on responses
-# to skip other questions in your survey. See documentation for details at
-# https://surveydown.org/config
-
-config <- sd_config(
-  skip_if = tibble::tribble(
-    ~question_id,   ~question_value,        ~target,
-    "skip_to_page", "end",                  "end",
-    "skip_to_page", "question_formatting",  "questionFormatting"
-  ),
-  show_if = tibble::tribble(
-    ~question_id,  ~question_value, ~target,
-    "penguins",    "other",         "penguins_other"
-  ),
-  # required_questions = c("penguins", "penguins_other", "skip_to_page")
-  all_questions_required = FALSE # Turn on to make all questions required
-)
-
-####################################
-# Don't change anything below here #
-####################################
-
-# The sd_server function initiates your survey - don't change this
-
-sd_server(
-  input   = input,
-  output  = output,
-  session = session,
-  config  = config,
-  db      = db
-)
-```
