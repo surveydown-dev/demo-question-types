@@ -23,26 +23,21 @@ db <- sd_database(
 # Server setup
 server <- function(input, output, session) {
 
-  config <- sd_config(
-    skip_if = tibble::tribble(
-      ~question_id,   ~question_value,        ~target,
-      "skip_to_page", "end",                  "end",
-      "skip_to_page", "question_formatting",  "questionFormatting"
-    ),
-    show_if = tibble::tribble(
-      ~question_id,  ~question_value, ~target,
-      "penguins",    "other",         "penguins_other"
-    ),
-    all_questions_required = TRUE
+  # Define any conditional skip logic here (skip to page if a condition is true)
+  sd_skip_if(
+    input$skip_to_page == "end" ~ "end",
+    input$skip_to_page == "question_formatting" ~ "question_formatting"
   )
 
-  # sd_server() initiates your survey - don't change it
+  # Define any conditional display logic here (show a question if a condition is true)
+  sd_show_if(
+    input$penguins == "other" ~ "penguins_other"
+  )
+
+  # Database designation and other settings
   sd_server(
-    input   = input,
-    output  = output,
-    session = session,
-    config  = config,
-    db      = db
+    db = db,
+    all_questions_required = TRUE
   )
 
 }
