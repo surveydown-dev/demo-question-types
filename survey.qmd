@@ -270,6 +270,25 @@ sd_question(
   id    = 'hs_date',
   label = "When did you start and finish high school?"
 )
+```
+
+#### Use `type = 'matrix'` to specify a matrix input type:
+
+```{r}
+sd_question(
+  type   = "matrix",
+  id     = "car_preference",
+  label  = "Please indicate your agreement with the following statements.",
+  row    = c(
+    "buy_gasoline" = "I'd like to buy a gasoline car.",
+    "buy_ev"       = "I'd like to buy an EV."
+  ),
+  option = c(
+    "Disagree" = "disagree",
+    "Neutral"  = "neutral",
+    "Agree"    = "agree"
+  )
+)
 
 sd_next()
 ```
