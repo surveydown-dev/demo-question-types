@@ -23,8 +23,6 @@ Here is a question to get started.
 
 This question showcases what a "multiple choice" question looks like, which is created using `type = 'mc'` inside the `sd_question()` function.
 
-It also is an example of the conditional display logic. If you choose the "Other" option, a second question pops up below asking to specify which other type of penguin is your favorite. This is controlled with the `sd_show_if()` function in the `server` of `app.R`.
-
 ```{r}
 sd_question(
   type  = 'mc',
@@ -36,12 +34,6 @@ sd_question(
     'Gentoo'    = 'gentoo',
     'Other'     = 'other'
   )
-)
-
-sd_question(
-  type  = "text",
-  id    = "penguins_other",
-  label = "Please specify the other penguin type:"
 )
 
 sd_next()

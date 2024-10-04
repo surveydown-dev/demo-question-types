@@ -29,16 +29,11 @@ server <- function(input, output, session) {
     input$skip_to_page == "question_formatting" ~ "question_formatting"
   )
 
-  # Define any conditional display logic here (show a question if a condition is true)
-  sd_show_if(
-    input$penguins == "other" ~ "penguins_other"
-  )
-
   # Database designation and other settings
   sd_server(
     db = db,
     use_html = TRUE,
-    all_questions_required = TRUE
+    rate_survey = TRUE
   )
 
 }
