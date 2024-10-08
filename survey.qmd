@@ -85,6 +85,7 @@ This page showcases the different types of question supported by `{surveydown}`.
     - `slider`: Slider to select discrete categories or continuous numbers.
     - `date`: Select a date from a calendar widget.
     - `daterange`: Select two dates from calendar widgets (e.g. begin and end dates).
+    - `matrix`: Several questions with same list of options. Each question is in fact an `mc` question.
 
 #### Use `type = 'text'` to specify a text input type question:
 
