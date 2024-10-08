@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>survey</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="survey_files/libs/clipboard/clipboard.min.js"></script>
+<script src="survey_files/libs/quarto-html/quarto.js"></script>
+<script src="survey_files/libs/quarto-html/popper.min.js"></script>
+<script src="survey_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="survey_files/libs/quarto-html/anchor.min.js"></script>
+<link href="survey_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="survey_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="survey_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="survey_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="survey_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="survey_files/libs/sw-buttons-group-0.8.7/buttons-group.js"></script>
+<link href="survey_files/libs/selectize-0.15.2/css/selectize.bootstrap3.css" rel="stylesheet">
+<script src="survey_files/libs/selectize-0.15.2/js/selectize.min.js"></script>
+<script src="survey_files/libs/selectize-0.15.2/accessibility/js/selectize-plugin-a11y.min.js"></script>
+<link href="survey_files/libs/shinyWidgets-0.8.7/shinyWidgets.min.css" rel="stylesheet">
+<script src="survey_files/libs/shinyWidgets-0.8.7/shinyWidgets-bindings.min.js"></script>
+<script src="survey_files/libs/ionrangeslider-javascript-2.3.1/js/ion.rangeSlider.min.js"></script>
+<script src="survey_files/libs/strftime-0.9.2/strftime-min.js"></script>
+<link href="survey_files/libs/ionrangeslider-css-2.3.1/css/ion.rangeSlider.css" rel="stylesheet">
+<script src="survey_files/libs/bootstrap-datepicker-js-1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script>(function() {
+        var datepicker = $.fn.datepicker.noConflict();
+        $.fn.bsDatepicker = datepicker;
+      })();
+     </script>
+<link href="survey_files/libs/bootstrap-datepicker-css-1.9.0/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<div id="welcome" class="sd-page">
+<section id="demo-survey-of-question-types" class="level1">
+<h1>Demo survey of question types</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a demo survey showcasing the functionality of <a href="https://surveydown.org" target="_blank">surveydown</a>. It doesn’t collect any data.</p>
+<p>The GitHub repo of this demo can be accessed <a href="https://github.com/surveydown-dev/demo-question-types" target="_blank">here</a>.</p>
+</div>
+</div>
+<p>Here is a question to get started.</p>
+<p>This question showcases what a “multiple choice” question looks like, which is created using <code>type = 'mc'</code> inside the <code>sd_question()</code> function.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-penguins" data-question-id="penguins" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('penguins_interacted', true, {priority: 'event'});">
+<div id="penguins" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="penguins-label">
+<label class="control-label" id="penguins-label" for="penguins"><p>Which is your favorite type of penguin?</p>
+</label>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="penguins" value="adelie">
+<span>Adélie</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="penguins" value="chinstrap">
+<span>Chinstrap</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="penguins" value="gentoo">
+<span>Gentoo</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="penguins" value="other">
+<span>Other</span>
+</label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+<div class="cell-output-display">
+<div data-next-page="" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+<button class="btn btn-default action-button sd-enter-button" id="page_id_next" onclick="Shiny.setInputValue('next_page', this.parentElement.getAttribute('data-next-page'));" style="display: block; margin: auto;" type="button">Next</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="skipif" class="sd-page">
+<section id="sd_skip_if" class="level1">
+<h1><code>sd_skip_if()</code></h1>
+<p>This page showcases the conditional skip logic, which allows you to skip forward in the survey based on different conditions. Depending on your choice, you’ll go to a different page in the survey when you press the “Next” button. This is controlled with the <code>sd_skip_if()</code> function to the <code>server</code> of <code>app.R</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-skip_to_page" data-question-id="skip_to_page" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('skip_to_page_interacted', true, {priority: 'event'});">
+<div id="skip_to_page" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="skip_to_page-label">
+<label class="control-label" id="skip_to_page-label" for="skip_to_page"><p>Where do you want to skip to?</p>
+</label>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="skip_to_page" value="question_types">
+<span>Take me to the page on Question Types (the next page)</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="skip_to_page" value="question_formatting">
+<span>Take me to the page on Question Formatting</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="skip_to_page" value="end">
+<span>Skip to the end</span>
+</label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+<div class="cell-output-display">
+<div data-next-page="" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+<button class="btn btn-default action-button sd-enter-button" id="page_id_next" onclick="Shiny.setInputValue('next_page', this.parentElement.getAttribute('data-next-page'));" style="display: block; margin: auto;" type="button">Next</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div id="questionTypes" class="sd-page">
+<section id="question-types" class="level1">
+<h1>Question types</h1>
+<p>This page showcases the different types of question supported by <code>{surveydown}</code>. Each question requires the user to define the following arguments to the <code>sd_question()</code> function:</p>
+<ul>
+<li><code>id</code>: A unique identifier for the question, which will be used as the variable name in the resulting survey data.</li>
+<li><code>label</code>: The label that will be displayed on the question in the survey.</li>
+<li><code>type</code>: The type of question, options include:
+<ul>
+<li><code>text</code>: Single line open text input.</li>
+<li><code>textarea</code>: Multiple line open text input.</li>
+<li><code>numeric</code>: Single line numeric text input.</li>
+<li><code>mc</code>: Multiple choice with a single select option (radio buttons).</li>
+<li><code>mc_buttons</code>: Same as <code>mc</code> but as a “button” style instead of radio buttons.</li>
+<li><code>mc_multiple</code>: Multiple choice with mutliple select options (check boxes).</li>
+<li><code>mc_multiple_buttons</code>: Same as <code>mc_multiple</code> but as a “button” style instead of check boxes.</li>
+<li><code>select</code>: Select a choice from a dropdown menu.</li>
+<li><code>slider</code>: Slider to select discrete categories or continuous numbers.</li>
+<li><code>date</code>: Select a date from a calendar widget.</li>
+<li><code>daterange</code>: Select two dates from calendar widgets (e.g.&nbsp;begin and end dates).</li>
+<li><code>matrix</code>: Several questions with same list of options. Each question is in fact an <code>mc</code> question.</li>
+</ul></li>
+</ul>
+<section id="use-type-text-to-specify-a-text-input-type-question" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-text-to-specify-a-text-input-type-question">Use <code>type = 'text'</code> to specify a text input type question:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-silly_word" data-question-id="silly_word" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('silly_word_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="silly_word-label" for="silly_word"><p>Write a silly word:</p>
+</label>
+<input id="silly_word" type="text" class="shiny-input-text form-control" value="">
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-textarea-to-specify-a-textarea-input-type-question" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-textarea-to-specify-a-textarea-input-type-question">Use <code>type = 'textarea'</code> to specify a textarea input type question:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-silly_paragraph" data-question-id="silly_paragraph" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('silly_paragraph_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="silly_paragraph-label" for="silly_paragraph"><p>Write a silly paragraph:</p>
+</label>
+<textarea id="silly_paragraph" class="shiny-input-textarea form-control" style="height:100px;" rows="6" cols="80"></textarea>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-numeric-to-specify-a-numeric-input-type" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-numeric-to-specify-a-numeric-input-type">Use <code>type = 'numeric'</code> to specify a numeric input type:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-age" data-question-id="age" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('age_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="age-label" for="age"><p>What’s your age?</p>
+</label>
+<input id="age" type="number" class="shiny-input-number form-control">
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-mc-to-specify-a-multiple-choice-type-question-with-a-single-choice-option" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-mc-to-specify-a-multiple-choice-type-question-with-a-single-choice-option">Use <code>type = 'mc'</code> to specify a multiple choice type question with a single choice option:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-artist" data-question-id="artist" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('artist_interacted', true, {priority: 'event'});">
+<div id="artist" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="artist-label">
+<label class="control-label" id="artist-label" for="artist"><p>Which artist do you prefer most from this list?</p>
+</label>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="artist" value="taylor_swift">
+<span>Taylor Swift</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="artist" value="beyonce">
+<span>Beyoncé</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="artist" value="adele">
+<span>Adele</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="artist" value="rihanna">
+<span>Rihanna</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="artist" value="ladygaga">
+<span>Lady Gaga</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="artist" value="ed_sheeran">
+<span>Ed Sheeran</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="artist" value="drake">
+<span>Drake</span>
+</label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-mc_buttons-to-generate-the-button-version-of-mc" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-mc_buttons-to-generate-the-button-version-of-mc">Use <code>type = 'mc_buttons'</code> to generate the button version of <code>mc</code>:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-fruit" data-question-id="fruit" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('fruit_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container shiny-input-radiogroup shiny-input-container-inline">
+<label class="control-label" id="fruit-label" for="fruit"><p>Which fruit do you prefer most from this list?</p>
+</label>
+<br>
+<div id="fruit" class="radio-group-buttons">
+<div aria-labelledby="fruit-label" class="btn-group btn-group-container-sw" data-toggle="buttons" role="group">
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="fruit" value="apple">
+Apple
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="fruit" value="banana">
+Banana
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="fruit" value="pear">
+Pear
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="fruit" value="strawberry">
+Strawberry
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="fruit" value="grape">
+Grape
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="fruit" value="mango">
+Mango
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="fruit" value="watermelon">
+Watermelon
+</button>
+</div>
+</div>
+</div>
+<script>
+            $(document).on('click', '#fruit .btn', function() {
+                Shiny.setInputValue('fruit_interacted', true, {priority: 'event'});
+            });
+        </script>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-mc_multiple-to-specify-a-multiple-choice-type-question-with-multiple-selection-enabled" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-mc_multiple-to-specify-a-multiple-choice-type-question-with-multiple-selection-enabled">Use <code>type = 'mc_multiple'</code> to specify a multiple choice type question with multiple selection enabled:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-swift" data-question-id="swift" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('swift_interacted', true, {priority: 'event'});">
+<div id="swift" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="swift-label">
+<label class="control-label" id="swift-label" for="swift"><p>What are your favorite Taylor Swift albums (select all that apply)?</p>
+</label>
+<div class="shiny-options-group">
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="taylor_swift">
+<span>Taylor Swift (2006)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="fearless">
+<span>Fearless (2008)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="speak_now">
+<span>Speak Now (2010)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="red">
+<span>Red (2012)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="1989">
+<span>1989 (2014)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="reputation">
+<span>Reputation (2017)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="lover">
+<span>Lover (2019)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="folklore">
+<span>Folklore (2020)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="evermore">
+<span>Evermore (2020)</span>
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input type="checkbox" name="swift" value="midnights">
+<span>Midnights (2022)</span>
+</label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-mc_multiple_buttons-to-generate-the-button-version-of-mc_multiple" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-mc_multiple_buttons-to-generate-the-button-version-of-mc_multiple">Use <code>type = 'mc_multiple_buttons'</code> to generate the button version of <code>mc_multiple</code>:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-michael_jackson" data-question-id="michael_jackson" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('michael_jackson_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container shiny-input-checkboxgroup shiny-input-container-inline">
+<label class="control-label" id="michael_jackson-label" for="michael_jackson"><p>Which are your favorite Michael Jackson songs (select all that apply)?</p>
+</label>
+<br>
+<div id="michael_jackson" class="checkbox-group-buttons">
+<div aria-labelledby="michael_jackson-label" class=" btn-group-container-sw" data-toggle="buttons" role="group">
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="michael_jackson" value="thriller">
+Thriller (1982)
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="michael_jackson" value="billie_jean">
+Billie Jean (1982)
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="michael_jackson" value="beat_it">
+Beat It (1982)
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="michael_jackson" value="man_in_the_mirror">
+Man in the Mirror (1987)
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="michael_jackson" value="smooth_criminal">
+Smooth Criminal (1987)
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="michael_jackson" value="black_or_white">
+Black or White (1991)
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="michael_jackson" value="bad">
+Bad (1987)
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="michael_jackson" value="human_nature">
+Human Nature (1982)
+</button>
+</div>
+</div>
+</div>
+<script>
+            $(document).on('click', '#michael_jackson .btn', function() {
+                Shiny.setInputValue('michael_jackson_interacted', true, {priority: 'event'});
+            });
+        </script>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-select-to-specify-a-drop-down-select-type-question" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-select-to-specify-a-drop-down-select-type-question">Use <code>type = 'select'</code> to specify a drop down select type question:</h4>
+<div class="cell">
+<div class="cell-output-display no-overflow-x">
+<div id="container-education" data-question-id="education" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('education_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="education-label" for="education"><p>What is the highest level of education you have attained?</p>
+</label>
+<div>
+<select id="education" class="shiny-input-select"><option value="">Choose an option...</option>
+<option value="hs_no">Did not attend high school</option>
+<option value="hs_some">Some high school</option>
+<option value="hs_grad">High school graduate</option>
+<option value="college_some">Some college</option>
+<option value="college_grad">College</option>
+<option value="grad">Graduate Work</option>
+<option value="no_response">Prefer not to say</option></select>
+<script type="application/json" data-for="education">{"plugins":["selectize-plugin-a11y"]}</script>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-slider-to-specify-a-slider-input-type" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-slider-to-specify-a-slider-input-type">Use <code>type = 'slider'</code> to specify a slider input type:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-climate_care" data-question-id="climate_care" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('climate_care_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="climate_care-label" for="climate_care"><p>To what extent do you believe human-caused climate change is real?</p>
+</label>
+<input class="js-range-slider sw-slider-text" data-data-type="text" data-force-edges="true" data-from="0" data-from-fixed="false" data-from-shadow="false" data-grid="true" data-hide-min-max="false" data-keyboard="true" data-prettify-enabled="false" data-skin="shiny" data-swvalues="[&quot;dont_believe&quot;,&quot;somewhat&quot;,&quot;neutral&quot;,&quot;believe&quot;,&quot;strongly_believe&quot;]" data-to-fixed="false" data-to-shadow="false" id="climate_care">
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="type-slider-can-also-be-used-to-select-a-range" class="level4">
+<h4 class="anchored" data-anchor-id="type-slider-can-also-be-used-to-select-a-range"><code>type = 'slider'</code> can also be used to select a range:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-coldest_months" data-question-id="coldest_months" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('coldest_months_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="coldest_months-label" for="coldest_months"><p>What months do you think are the coldest throughout a year?</p>
+</label>
+<input class="js-range-slider sw-slider-text" data-data-type="text" data-drag-interval="true" data-force-edges="true" data-from="3" data-from-fixed="false" data-from-shadow="false" data-grid="true" data-hide-min-max="false" data-keyboard="true" data-prettify-enabled="false" data-skin="shiny" data-swvalues="[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;,&quot;Sep&quot;,&quot;Oct&quot;,&quot;Nov&quot;,&quot;Dec&quot;]" data-to="7" data-to-fixed="false" data-to-shadow="false" data-type="double" id="coldest_months">
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-date-to-specify-a-date-input-type" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-date-to-specify-a-date-input-type">Use <code>type = 'date'</code> to specify a date input type:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-dob" data-question-id="dob" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('dob_interacted', true, {priority: 'event'});">
+<div id="dob" class="shiny-date-input form-group shiny-input-container">
+<label class="control-label" id="dob-label" for="dob"><p>What is your date of birth?</p>
+</label>
+<input type="text" class="form-control" aria-labelledby="dob-label" title="Date format: mm/dd/yyyy" data-date-language="en" data-date-week-start="0" data-date-format="mm/dd/yyyy" data-date-start-view="month" data-date-autoclose="true" data-date-dates-disabled="null" data-date-days-of-week-disabled="null">
+<script>setTimeout(function() {
+            $('#dob').on('change', function() {
+                Shiny.setInputValue('dob_interacted', true, {priority: 'event'});
+            });
+         }, 1000);</script>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-daterange-to-specify-a-daterange-input-type" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-daterange-to-specify-a-daterange-input-type">Use <code>type = 'daterange'</code> to specify a daterange input type:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-hs_date" data-question-id="hs_date" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('hs_date_interacted', true, {priority: 'event'});">
+<div id="hs_date" class="shiny-date-range-input form-group shiny-input-container">
+<label class="control-label" id="hs_date-label" for="hs_date"><p>When did you start and finish high school?</p>
+</label>
+<div class="input-daterange input-group input-group-sm">
+<input class="form-control" type="text" aria-labelledby="hs_date-label" title="Date format: mm/dd/yyyy" data-date-language="en" data-date-week-start="0" data-date-format="mm/dd/yyyy" data-date-start-view="month" data-date-autoclose="true">
+<span class="input-group-addon input-group-prepend input-group-append">
+<span class="input-group-text">-</span>
+</span>
+<input class="form-control" type="text" aria-labelledby="hs_date-label" title="Date format: mm/dd/yyyy" data-date-language="en" data-date-week-start="0" data-date-format="mm/dd/yyyy" data-date-start-view="month" data-date-autoclose="true">
+</div>
+<script>setTimeout(function() {
+            $('#hs_date').on('change', function() {
+                Shiny.setInputValue('hs_date_interacted', true, {priority: 'event'});
+            });
+         }, 1000);</script>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-type-matrix-to-specify-a-matrix-input-type" class="level4">
+<h4 class="anchored" data-anchor-id="use-type-matrix-to-specify-a-matrix-input-type">Use <code>type = 'matrix'</code> to specify a matrix input type:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-car_preference" data-question-id="car_preference" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('car_preference_interacted', true, {priority: 'event'});">
+<div class="matrix-question-container">
+<label class="control-label"><p>Please indicate your agreement with the following statements.</p>
+</label>
+
+<table class="matrix-question caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th"></td>
+<td data-quarto-table-cell-role="th">Disagree</td>
+<td data-quarto-table-cell-role="th">Neutral</td>
+<td data-quarto-table-cell-role="th">Agree</td>
+</tr>
+</tbody>
+<tbody>
+<tr class="odd">
+<td>I'd like to buy a gasoline car.</td>
+<td colspan="3"><div id="container-car_preference_buy_gasoline" class="question-container" data-question-id="car_preference_buy_gasoline" style="width: 100%;" oninput="Shiny.setInputValue('car_preference_buy_gasoline_interacted', true, {priority: 'event'});">
+<div id="car_preference_buy_gasoline" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="car_preference_buy_gasoline-label">
+<label class="control-label shiny-label-null" for="car_preference_buy_gasoline" id="car_preference_buy_gasoline-label"></label>
+<div class="shiny-options-group">
+<div class="radio">
+<label> <input type="radio" name="car_preference_buy_gasoline" value="disagree"> <span>Disagree</span> </label>
+</div>
+<div class="radio">
+<label> <input type="radio" name="car_preference_buy_gasoline" value="neutral"> <span>Neutral</span> </label>
+</div>
+<div class="radio">
+<label> <input type="radio" name="car_preference_buy_gasoline" value="agree"> <span>Agree</span> </label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div></td>
+</tr>
+<tr class="even">
+<td>I'd like to buy an EV.</td>
+<td colspan="3"><div id="container-car_preference_buy_ev" class="question-container" data-question-id="car_preference_buy_ev" style="width: 100%;" oninput="Shiny.setInputValue('car_preference_buy_ev_interacted', true, {priority: 'event'});">
+<div id="car_preference_buy_ev" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="car_preference_buy_ev-label">
+<label class="control-label shiny-label-null" for="car_preference_buy_ev" id="car_preference_buy_ev-label"></label>
+<div class="shiny-options-group">
+<div class="radio">
+<label> <input type="radio" name="car_preference_buy_ev" value="disagree"> <span>Disagree</span> </label>
+</div>
+<div class="radio">
+<label> <input type="radio" name="car_preference_buy_ev" value="neutral"> <span>Neutral</span> </label>
+</div>
+<div class="radio">
+<label> <input type="radio" name="car_preference_buy_ev" value="agree"> <span>Agree</span> </label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+<div class="cell-output-display">
+<div data-next-page="" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+<button class="btn btn-default action-button sd-enter-button" id="page_id_next" onclick="Shiny.setInputValue('next_page', this.parentElement.getAttribute('data-next-page'));" style="display: block; margin: auto;" type="button">Next</button>
+</div>
+</div>
+</div>
+</section>
+</section>
+</div>
+<div id="question_formatting" class="sd-page">
+<section id="question-formatting" class="level1">
+<h1>Question formatting</h1>
+<blockquote class="blockquote">
+<p>On this page, we’ll demonstrate some of the formatting options for displaying questions.</p>
+</blockquote>
+<section id="markdown-is-supported-for-the-question-label" class="level4">
+<h4 class="anchored" data-anchor-id="markdown-is-supported-for-the-question-label">Markdown is supported for the question label</h4>
+<p>The <code>label</code> argument for any question type can accept markdown formatting. For example, the question below uses the <code>**</code> symbols to make some works bold:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-markdown_label" data-question-id="markdown_label" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('markdown_label_interacted', true, {priority: 'event'});">
+<div id="markdown_label" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="markdown_label-label">
+<label class="control-label" id="markdown_label-label" for="markdown_label"><p><strong>This</strong> is a question <em>label</em> supporting <em><strong>markdown</strong></em>:</p>
+</label>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="markdown_label" value="option_a">
+<span>Option A</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="markdown_label" value="option_b">
+<span>Option B</span>
+</label>
+</div>
+<div class="radio">
+<label>
+<input type="radio" name="markdown_label" value="option_c">
+<span>Option C</span>
+</label>
+</div>
+</div>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="markdown-is-supported-for-options-in-mc_buttons-questions" class="level4">
+<h4 class="anchored" data-anchor-id="markdown-is-supported-for-options-in-mc_buttons-questions">Markdown is supported for options in <code>mc_buttons</code> questions</h4>
+<p>For <code>mc_button</code> type questions, you can also use markdown to format the <code>option</code> labels:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-markdown_buttons" data-question-id="markdown_buttons" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('markdown_buttons_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container shiny-input-radiogroup shiny-input-container-inline">
+<label class="control-label" id="markdown_buttons-label" for="markdown_buttons"><p>The 3 options below support markdown:</p>
+</label>
+<br>
+<div id="markdown_buttons" class="radio-group-buttons">
+<div aria-labelledby="markdown_buttons-label" class="btn-group btn-group-container-sw" data-toggle="buttons" role="group">
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="markdown_buttons" value="option_a">
+<em>Option A</em>
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="markdown_buttons" value="option_b">
+<strong>Option B</strong>
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="markdown_buttons" value="option_c">
+<em><strong>Option C</strong></em>
+</button>
+</div>
+</div>
+</div>
+<script>
+            $(document).on('click', '#markdown_buttons .btn', function() {
+                Shiny.setInputValue('markdown_buttons_interacted', true, {priority: 'event'});
+            });
+        </script>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+<p>The same is true for <code>mc_multiple_buttons</code>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-markdown_multiple_buttons" data-question-id="markdown_multiple_buttons" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('markdown_multiple_buttons_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container shiny-input-checkboxgroup shiny-input-container-inline">
+<label class="control-label" id="markdown_multiple_buttons-label" for="markdown_multiple_buttons"><p>The 3 options below support markdown:</p>
+</label>
+<br>
+<div id="markdown_multiple_buttons" class="checkbox-group-buttons">
+<div aria-labelledby="markdown_multiple_buttons-label" class=" btn-group-container-sw" data-toggle="buttons" role="group">
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="markdown_multiple_buttons" value="option_a">
+<em>Option A</em>
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="markdown_multiple_buttons" value="option_b">
+<strong>Option B</strong>
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn checkbtn btn-default">
+<input type="checkbox" autocomplete="off" name="markdown_multiple_buttons" value="option_c">
+<em><strong>Option C</strong></em>
+</button>
+</div>
+</div>
+</div>
+<script>
+            $(document).on('click', '#markdown_multiple_buttons .btn', function() {
+                Shiny.setInputValue('markdown_multiple_buttons_interacted', true, {priority: 'event'});
+            });
+        </script>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="html-is-also-supported-for-options-of-mc_buttons-and-mc_multiple_buttons-so-that-you-can-insert-mixed-content-including-plain-text-markdown-and-html-images.-for-example-here-is-a-question-with-some-complex-labels-for-a-choice-question" class="level4">
+<h4 class="anchored" data-anchor-id="html-is-also-supported-for-options-of-mc_buttons-and-mc_multiple_buttons-so-that-you-can-insert-mixed-content-including-plain-text-markdown-and-html-images.-for-example-here-is-a-question-with-some-complex-labels-for-a-choice-question">HTML is also supported for options of <code>mc_buttons</code> and <code>mc_multiple_buttons</code>, so that you can insert mixed content including plain text, markdown, and HTML images. For example, here is a question with some complex labels for a choice question:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-html_buttons" data-question-id="html_buttons" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('html_buttons_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container shiny-input-radiogroup shiny-input-container-inline">
+<label class="control-label" id="html_buttons-label" for="html_buttons"><p>A sample survey question using <code>mc_buttons</code></p>
+</label>
+<br>
+<div id="html_buttons" class="radio-group-buttons">
+<div aria-labelledby="html_buttons-label" class="btn-group btn-group-container-sw" data-toggle="buttons" role="group">
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="html_buttons" value="option_1">
+<strong>Option 1</strong><br><img src="https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/images/fuji.jpg" width="100"><br><strong>Type</strong>: Fuji<br><strong>Price</strong>: $ 2 / lb<br><strong>Freshness</strong>: Average
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="html_buttons" value="option_2">
+<strong>Option 2</strong><br><img src="https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/images/pinkLady.jpg" width="100"><br><strong>Type</strong>: Pink Lady<br><strong>Price</strong>: $ 1.5 / lb<br><strong>Freshness</strong>: Excellent
+</button>
+</div>
+<div class="btn-group btn-group-toggle" role="group">
+<button class="btn radiobtn btn-default">
+<input type="radio" autocomplete="off" name="html_buttons" value="option_3">
+<strong>Option 3</strong><br><img src="https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/images/honeycrisp.jpg" width="100"><br><strong>Type</strong>: Honeycrisp<br><strong>Price</strong>: $ 2 / lb<br><strong>Freshness</strong>: Poor
+</button>
+</div>
+</div>
+</div>
+<script>
+            $(document).on('click', '#html_buttons .btn', function() {
+                Shiny.setInputValue('html_buttons_interacted', true, {priority: 'event'});
+            });
+        </script>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+</div>
+</section>
+<section id="use-the-width-argument-to-change-the-width-for-the-question" class="level4">
+<h4 class="anchored" data-anchor-id="use-the-width-argument-to-change-the-width-for-the-question">Use the <code>width</code> argument to change the width for the question:</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="container-change_width" data-question-id="change_width" class="question-container" style="width: 40%;" oninput="Shiny.setInputValue('change_width_interacted', true, {priority: 'event'});">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="change_width-label" for="change_width"><p>This text area has width set as 40%:</p>
+</label>
+<textarea id="change_width" class="shiny-input-textarea form-control" style="height:100px;" rows="6" cols="80"></textarea>
+</div>
+<span class="hidden-asterisk">*</span>
+</div>
+</div>
+<div class="cell-output-display">
+<div data-next-page="" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+<button class="btn btn-default action-button sd-enter-button" id="page_id_next" onclick="Shiny.setInputValue('next_page', this.parentElement.getAttribute('data-next-page'));" style="display: block; margin: auto;" type="button">Next</button>
+</div>
+</div>
+</div>
+</section>
+</section>
+</div>
+<div id="end" class="sd-page">
+<section id="thanks-for-taking-our-survey" class="level2">
+<h2 class="anchored" data-anchor-id="thanks-for-taking-our-survey">Thanks for taking our survey!</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+<button class="btn btn-default action-button sd-enter-button" id="close-survey-button" onclick="Shiny.setInputValue('show_exit_modal', true, {priority: 'event'});" style="display: block; margin: auto;" type="button">Exit Survey</button>
+</div>
+<script>
+      Shiny.addCustomMessageHandler('closeWindow', function(message) {
+        window.close();
+        if (!window.closed) {
+          alert('Please close this tab manually to exit the survey.');
+        }
+      });
+    </script>
+</div>
+</div>
+</section>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

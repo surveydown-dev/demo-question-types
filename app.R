@@ -32,7 +32,7 @@ server <- function(input, output, session) {
   # Database designation and other settings
   sd_server(
     db = db,
-    use_html = FALSE,
+    use_html = TRUE,
     rate_survey = TRUE
   )
 
