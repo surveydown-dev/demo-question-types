@@ -612,7 +612,6 @@ Human Nature (1982)
 <h4 class="anchored" data-anchor-id="use-type-matrix-to-specify-a-matrix-input-type">Use <code>type = 'matrix'</code> to specify a matrix input type:</h4>
 <div class="cell">
 <div class="cell-output-display">
-<div id="container-car_preference" data-question-id="car_preference" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('car_preference_interacted', true, {priority: 'event'});">
 <div class="matrix-question-container">
 <label class="control-label"><p>Please indicate your agreement with the following statements.</p>
 </label>
@@ -676,8 +675,6 @@ Human Nature (1982)
 </tbody>
 </table>
 
-</div>
-<span class="hidden-asterisk">*</span>
 </div>
 </div>
 <div class="cell-output-display">
@@ -883,7 +880,7 @@ Human Nature (1982)
 <div class="cell">
 <div class="cell-output-display">
 <div style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
-<button class="btn btn-default action-button sd-enter-button" id="close-survey-button" onclick="Shiny.setInputValue('show_exit_modal', true, {priority: 'event'});" style="display: block; margin: auto;" type="button">Exit Survey</button>
+<button class="btn btn-default action-button sd-enter-button" id="close-survey-button" onclick="Shiny.setInputValue('show_exit_modal', true, {priority: 'event'});" style="display: block; margin: auto;" type="button">Exit This Survey</button>
 </div>
 <script>
       Shiny.addCustomMessageHandler('closeWindow', function(message) {

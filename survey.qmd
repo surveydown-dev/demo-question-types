@@ -273,8 +273,8 @@ sd_question(
   id     = "car_preference",
   label  = "Please indicate your agreement with the following statements.",
   row    = c(
-    "buy_gasoline" = "I'd like to buy a gasoline car.",
-    "buy_ev"       = "I'd like to buy an EV."
+    "I'd like to buy a gasoline car." = "buy_gasoline",
+    "I'd like to buy an EV." = "buy_ev"
   ),
   option = c(
     "Disagree" = "disagree",
@@ -395,7 +395,7 @@ sd_next()
 ## Thanks for taking our survey!
 
 ```{r}
-sd_close()
+sd_close("Exit This Survey")
 ```
 
 :::

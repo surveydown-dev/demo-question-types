@@ -33,7 +33,7 @@ server <- function(input, output, session) {
   sd_server(
     db = db,
     use_html = TRUE,
-    rate_survey = TRUE
+    auto_scroll = TRUE
   )
 
 }
