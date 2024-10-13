@@ -19,39 +19,15 @@ The GitHub repo of this demo can be accessed <a href="https://github.com/surveyd
 
 :::
 
-Here is a question to get started.
+Hi! This is a showcase of different question types and question formatting that surveydown supports.
 
-This question showcases what a "multiple choice" question looks like, which is created using `type = 'mc'` inside the `sd_question()` function.
-
-```{r}
-sd_question(
-  type  = 'mc',
-  id    = 'penguins',
-  label = "Which is your favorite type of penguin?",
-  option = c(
-    'Adélie'    = 'adelie',
-    'Chinstrap' = 'chinstrap',
-    'Gentoo'    = 'gentoo',
-    'Other'     = 'other'
-  )
-)
-
-sd_next()
-```
-
-:::
-
-::: {#skipif .sd-page}
-
-# `sd_skip_if()`
-
-This page showcases the conditional skip logic, which allows you to skip forward in the survey based on different conditions. Depending on your choice, you'll go to a different page in the survey when you press the "Next" button. This is controlled with the `sd_skip_if()` function to the `server` of `app.R`.
+Please make your choice below.
 
 ```{r}
 sd_question(
   type  = 'mc',
   id    = 'skip_to_page',
-  label = "Where do you want to skip to?",
+  label = "Where do you want to go to?",
   option = c(
     'Take me to the page on Question Types (the next page)' = 'question_types',
     'Take me to the page on Question Formatting' = 'question_formatting',

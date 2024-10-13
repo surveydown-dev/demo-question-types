@@ -79,61 +79,13 @@ Note
 <p>The GitHub repo of this demo can be accessed <a href="https://github.com/surveydown-dev/demo-question-types" target="_blank">here</a>.</p>
 </div>
 </div>
-<p>Here is a question to get started.</p>
-<p>This question showcases what a “multiple choice” question looks like, which is created using <code>type = 'mc'</code> inside the <code>sd_question()</code> function.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="container-penguins" data-question-id="penguins" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('penguins_interacted', true, {priority: 'event'});">
-<div id="penguins" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="penguins-label">
-<label class="control-label" id="penguins-label" for="penguins"><p>Which is your favorite type of penguin?</p>
-</label>
-<div class="shiny-options-group">
-<div class="radio">
-<label>
-<input type="radio" name="penguins" value="adelie">
-<span>Adélie</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="penguins" value="chinstrap">
-<span>Chinstrap</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="penguins" value="gentoo">
-<span>Gentoo</span>
-</label>
-</div>
-<div class="radio">
-<label>
-<input type="radio" name="penguins" value="other">
-<span>Other</span>
-</label>
-</div>
-</div>
-</div>
-<span class="hidden-asterisk">*</span>
-</div>
-</div>
-<div class="cell-output-display">
-<div data-next-page="" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
-<button class="btn btn-default action-button sd-enter-button" id="page_id_next" onclick="Shiny.setInputValue('next_page', this.parentElement.getAttribute('data-next-page'));" style="display: block; margin: auto;" type="button">Next</button>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div id="skipif" class="sd-page">
-<section id="sd_skip_if" class="level1">
-<h1><code>sd_skip_if()</code></h1>
-<p>This page showcases the conditional skip logic, which allows you to skip forward in the survey based on different conditions. Depending on your choice, you’ll go to a different page in the survey when you press the “Next” button. This is controlled with the <code>sd_skip_if()</code> function to the <code>server</code> of <code>app.R</code>.</p>
+<p>Hi! This is a showcase of different question types and question formatting that surveydown supports.</p>
+<p>Please make your choice below.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="container-skip_to_page" data-question-id="skip_to_page" class="question-container" style="width: 100%;" oninput="Shiny.setInputValue('skip_to_page_interacted', true, {priority: 'event'});">
 <div id="skip_to_page" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="skip_to_page-label">
-<label class="control-label" id="skip_to_page-label" for="skip_to_page"><p>Where do you want to skip to?</p>
+<label class="control-label" id="skip_to_page-label" for="skip_to_page"><p>Where do you want to go to?</p>
 </label>
 <div class="shiny-options-group">
 <div class="radio">
